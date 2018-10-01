@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
+// define port for server
 const port = process.env.PORT || 8080;
+
+// import required packages
 const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
@@ -36,6 +39,8 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // import/run routes with app and passport as arguments.
 require("./app/routes")(app, passport); // load our routes and pass in our app and fully configured passport
+
+// server
 
 app.listen(port, () => {
   console.log("The magic happens on port " + port + ".");

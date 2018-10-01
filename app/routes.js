@@ -5,6 +5,7 @@ const isLoggedIn = (req, res, next) => {
   res.redirect("/");
 };
 
+// define routes to be exported as a method that takes app and configured passport as arguments
 module.exports = (app, passport) => {
   app.get("/", (req, res) => {
     res.render("index.ejs");
